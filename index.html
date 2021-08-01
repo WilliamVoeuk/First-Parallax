@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="" class="logo">logo</a>
+        <ul>
+            <li><a href="" class="active">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Work</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </header>
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+
+    <section>
+        <img src="Images/stars.png" id="stars">
+        <img src="Images/moon.png" id="moon">
+        <img src="Images/mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="Images/mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>
+            Parallax Scrolling Effects
+        </h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis molestiae ad, inventore provident eveniet eaque a aut laudantium dolores omnis quaerat nulla temporibus, error quo et, qui dignissimos tenetur. Repellendus voluptates culpa beatae quia?
+            Neque magnam voluptatum quos mollitia exercitationem quisquam quia illum facilis reiciendis tenetur repudiandae sapiente dolores non molestias minus, omnis saepe earum consequatur sit officia incidunt officiis iste amet aspernatur! Cupiditate,
+            enim at. Aliquam maiores exercitationem, architecto natus tempore nesciunt atque. Magni dolore, eveniet vel, amet cum, culpa nisi voluptatem eius accusantium quod recusandae. Quisquam, reiciendis eveniet? Harum consectetur quaerat totam accusantium
+            dolores, ipsam vitae esse beatae. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis molestiae ad, inventore provident eveniet eaque a aut laudantium dolores omnis quaerat nulla temporibus, error quo
+            et, qui dignissimos tenetur. Repellendus voluptates culpa beatae quia? Neque magnam voluptatum quos mollitia exercitationem quisquam quia illum facilis reiciendis tenetur repudiandae sapiente dolores non molestias minus, omnis saepe earum
+            consequatur sit officia incidunt officiis iste amet aspernatur! Cupiditate, enim at. Aliquam maiores exercitationem, architecto natus tempore nesciunt atque. Magni dolore, eveniet vel, amet cum, culpa nisi voluptatem eius accusantium quod
+            recusandae. Quisquam, reiciendis eveniet? Harum consectetur quaerat totam accusantium dolores, ipsam vitae esse beatae. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis molestiae ad, inventore provident eveniet
+            eaque a aut laudantium dolores omnis quaerat nulla temporibus, error quo et, qui dignissimos tenetur. Repellendus voluptates culpa beatae quia? Neque magnam voluptatum quos mollitia exercitationem quisquam quia illum facilis reiciendis tenetur
+            repudiandae sapiente dolores non molestias minus, omnis saepe earum consequatur sit officia incidunt officiis iste amet aspernatur! Cupiditate, enim at. Aliquam maiores exercitationem, architecto natus tempore nesciunt atque. Magni dolore,
+            eveniet vel, amet cum, culpa nisi voluptatem eius accusantium quod recusandae. Quisquam, reiciendis eveniet? Harum consectetur quaerat totam accusantium dolores, ipsam vitae esse beatae. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Perspiciatis molestiae ad, inventore provident eveniet eaque a aut laudantium dolores omnis quaerat nulla temporibus, error quo et, qui dignissimos tenetur. Repellendus voluptates culpa beatae quia? Neque magnam voluptatum quos mollitia
+            exercitationem quisquam quia illum facilis reiciendis tenetur repudiandae sapiente dolores non molestias minus, omnis saepe earum consequatur sit officia incidunt officiis iste amet aspernatur! Cupiditate, enim at. Aliquam maiores exercitationem,
+            architecto natus tempore nesciunt atque. Magni dolore, eveniet vel, amet cum, culpa nisi voluptatem eius accusantium quod recusandae. Quisquam, reiciendis eveniet? Harum consectetur quaerat totam accusantium dolores, ipsam vitae esse beatae.
+        </p>
+    </div>
+    <script>
+        let stars = document.getElementById("stars");
+        let moon = document.getElementById("moon");
+        let montains_dehind = document.getElementById("mountains_behind");
+        let text = document.getElementById("text");
+        let btn = document.getElementById("btn");
+        let montains_front = document.getElementById("mountains_front");
+        let header = document.querySelector("header")
+
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            stars.style.left = value * 0.5 + 'px';
+            moon.style.top = value + 'px';
+            montains_dehind.style.top = value * 0.5 + 'px';
+            montains_front.style.top = value * 0.75 + 'px';
+            text.style.marginRight = value * 3 + 'px';
+            text.style.marginTop = value * 1 + 'px';
+            btn.style.marginTop = value * 3 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+    <script type="text/javascript">
+        let progress = document.getElementById('progressbar');
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function() {
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + "%";
+        }
+    </script>
+</body>
+
+</html>
